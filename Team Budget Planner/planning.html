@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Team Budgect Planner App</title>
+        <link rel="stylesheet" href="planstyle.css">
+        
+    </head>
+    <body>
+        <h1><strong>Team Budget Planner</strong> </h1>
+        <script>
+            var dict={}
+            function addDetails() {
+                var product=prompt("Enter the Product Name : ")
+                var price=prompt("Enter the Price of "+product+" : ")
+                dict[product]=price 
+            }
+    function checkDetails() {
+        var val=Object.values(dict)
+        var totalBudget=0
+        for (let i=0;i<val.length;i++) {
+            var num=parseFloat(val[i])
+            totalBudget+=num
+        }
+/*         document.write("Total Budget is : "+totalBudget+" Rs")
+ */        var t =document.getElementById('total');
+        t.innerHTML = "Total Budget is : "+totalBudget+" Rs";
+    }
+    </script>
+    <button  class="addDet"onclick="addDetails()">Add Product Details</button> 
+    <button class="checkDet"onclick="checkDetails()">Check Product Details</button>
+    <h3 id="total"> </h3>
+    <footer>
+        <small><br>&copy; Copyright 2021,Team Budget Planner email:vdarshan@zeomega.com</small>
+      </footer>
+</body>
+</html>
+
